@@ -1,9 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
+import 'package:grpc_flutter_client/domain/entities/action.dart';
 
 part 'post.freezed.dart';
-
-enum Action {add, delete}
 
 @freezed
 class Post with _$Post {

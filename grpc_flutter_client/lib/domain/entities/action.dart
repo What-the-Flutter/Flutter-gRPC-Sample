@@ -1,0 +1,1 @@
+enum Action { add, delete }

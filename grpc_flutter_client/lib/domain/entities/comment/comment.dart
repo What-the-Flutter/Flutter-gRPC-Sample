@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
+import 'package:grpc_flutter_client/domain/entities/action.dart';
 
 part 'comment.freezed.dart';
 
@@ -11,5 +12,6 @@ class Comment with _$Comment {
     required int postId,
     required String text,
     required DateTime date,
+    required Action action,
   }) = _Comment;
 }
