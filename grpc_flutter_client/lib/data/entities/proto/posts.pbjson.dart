@@ -8,6 +8,17 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use actionDescriptor instead')
+const Action$json = const {
+  '1': 'Action',
+  '2': const [
+    const {'1': 'CREATE', '2': 0},
+    const {'1': 'DELETE', '2': 1},
+  ],
+};
+
+/// Descriptor for `Action`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List actionDescriptor = $convert.base64Decode('CgZBY3Rpb24SCgoGQ1JFQVRFEAASCgoGREVMRVRFEAE=');
 @$core.Deprecated('Use emptyDescriptor instead')
 const Empty$json = const {
   '1': 'Empty',
@@ -44,21 +55,12 @@ const Post$json = const {
     const {'1': 'user_id', '3': 2, '4': 1, '5': 5, '10': 'userId'},
     const {'1': 'date', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'date'},
     const {'1': 'text', '3': 4, '4': 1, '5': 9, '10': 'text'},
+    const {'1': 'action', '3': 5, '4': 1, '5': 14, '6': '.Action', '10': 'action'},
   ],
 };
 
 /// Descriptor for `Post`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List postDescriptor = $convert.base64Decode('CgRQb3N0Eg4KAmlkGAEgASgFUgJpZBIXCgd1c2VyX2lkGAIgASgFUgZ1c2VySWQSLgoEZGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBGRhdGUSEgoEdGV4dBgEIAEoCVIEdGV4dA==');
-@$core.Deprecated('Use postsDescriptor instead')
-const Posts$json = const {
-  '1': 'Posts',
-  '2': const [
-    const {'1': 'posts', '3': 1, '4': 3, '5': 11, '6': '.Post', '10': 'posts'},
-  ],
-};
-
-/// Descriptor for `Posts`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List postsDescriptor = $convert.base64Decode('CgVQb3N0cxIbCgVwb3N0cxgBIAMoCzIFLlBvc3RSBXBvc3Rz');
+final $typed_data.Uint8List postDescriptor = $convert.base64Decode('CgRQb3N0Eg4KAmlkGAEgASgFUgJpZBIXCgd1c2VyX2lkGAIgASgFUgZ1c2VySWQSLgoEZGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBGRhdGUSEgoEdGV4dBgEIAEoCVIEdGV4dBIfCgZhY3Rpb24YBSABKA4yBy5BY3Rpb25SBmFjdGlvbg==');
 @$core.Deprecated('Use commentIdDescriptor instead')
 const CommentId$json = const {
   '1': 'CommentId',
@@ -77,19 +79,10 @@ const Comment$json = const {
     const {'1': 'user_id', '3': 2, '4': 1, '5': 5, '10': 'userId'},
     const {'1': 'date', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'date'},
     const {'1': 'text', '3': 4, '4': 1, '5': 9, '10': 'text'},
-    const {'1': 'post_id', '3': 5, '4': 1, '5': 9, '10': 'postId'},
+    const {'1': 'post_id', '3': 5, '4': 1, '5': 5, '10': 'postId'},
+    const {'1': 'action', '3': 6, '4': 1, '5': 14, '6': '.Action', '10': 'action'},
   ],
 };
 
 /// Descriptor for `Comment`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List commentDescriptor = $convert.base64Decode('CgdDb21tZW50Eg4KAmlkGAEgASgFUgJpZBIXCgd1c2VyX2lkGAIgASgFUgZ1c2VySWQSLgoEZGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBGRhdGUSEgoEdGV4dBgEIAEoCVIEdGV4dBIXCgdwb3N0X2lkGAUgASgJUgZwb3N0SWQ=');
-@$core.Deprecated('Use commentsDescriptor instead')
-const Comments$json = const {
-  '1': 'Comments',
-  '2': const [
-    const {'1': 'comments', '3': 1, '4': 3, '5': 11, '6': '.Comment', '10': 'comments'},
-  ],
-};
-
-/// Descriptor for `Comments`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List commentsDescriptor = $convert.base64Decode('CghDb21tZW50cxIkCghjb21tZW50cxgBIAMoCzIILkNvbW1lbnRSCGNvbW1lbnRz');
+final $typed_data.Uint8List commentDescriptor = $convert.base64Decode('CgdDb21tZW50Eg4KAmlkGAEgASgFUgJpZBIXCgd1c2VyX2lkGAIgASgFUgZ1c2VySWQSLgoEZGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBGRhdGUSEgoEdGV4dBgEIAEoCVIEdGV4dBIXCgdwb3N0X2lkGAUgASgFUgZwb3N0SWQSHwoGYWN0aW9uGAYgASgOMgcuQWN0aW9uUgZhY3Rpb24=');

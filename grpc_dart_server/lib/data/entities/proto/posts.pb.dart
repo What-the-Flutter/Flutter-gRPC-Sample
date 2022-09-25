@@ -11,6 +11,10 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'google/protobuf/timestamp.pb.dart' as $1;
 
+import 'posts.pbenum.dart';
+
+export 'posts.pbenum.dart';
+
 class Empty extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Empty', createEmptyInstance: create)
     ..hasRequiredFields = false
@@ -154,6 +158,7 @@ class Post extends $pb.GeneratedMessage {
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.O3)
     ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'date', subBuilder: $1.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text')
+    ..e<Action>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.CREATE, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
 
@@ -163,6 +168,7 @@ class Post extends $pb.GeneratedMessage {
     $core.int? userId,
     $1.Timestamp? date,
     $core.String? text,
+    Action? action,
   }) {
     final _result = create();
     if (id != null) {
@@ -176,6 +182,9 @@ class Post extends $pb.GeneratedMessage {
     }
     if (text != null) {
       _result.text = text;
+    }
+    if (action != null) {
+      _result.action = action;
     }
     return _result;
   }
@@ -237,47 +246,15 @@ class Post extends $pb.GeneratedMessage {
   $core.bool hasText() => $_has(3);
   @$pb.TagNumber(4)
   void clearText() => clearField(4);
-}
 
-class Posts extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Posts', createEmptyInstance: create)
-    ..pc<Post>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'posts', $pb.PbFieldType.PM, subBuilder: Post.create)
-    ..hasRequiredFields = false
-  ;
-
-  Posts._() : super();
-  factory Posts({
-    $core.Iterable<Post>? posts,
-  }) {
-    final _result = create();
-    if (posts != null) {
-      _result.posts.addAll(posts);
-    }
-    return _result;
-  }
-  factory Posts.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Posts.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Posts clone() => Posts()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Posts copyWith(void Function(Posts) updates) => super.copyWith((message) => updates(message as Posts)) as Posts; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static Posts create() => Posts._();
-  Posts createEmptyInstance() => create();
-  static $pb.PbList<Posts> createRepeated() => $pb.PbList<Posts>();
-  @$core.pragma('dart2js:noInline')
-  static Posts getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Posts>(create);
-  static Posts? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<Post> get posts => $_getList(0);
+  @$pb.TagNumber(5)
+  Action get action => $_getN(4);
+  @$pb.TagNumber(5)
+  set action(Action v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAction() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAction() => clearField(5);
 }
 
 class CommentId extends $pb.GeneratedMessage {
@@ -333,7 +310,8 @@ class Comment extends $pb.GeneratedMessage {
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.O3)
     ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'date', subBuilder: $1.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'postId')
+    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'postId', $pb.PbFieldType.O3)
+    ..e<Action>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.CREATE, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
 
@@ -343,7 +321,8 @@ class Comment extends $pb.GeneratedMessage {
     $core.int? userId,
     $1.Timestamp? date,
     $core.String? text,
-    $core.String? postId,
+    $core.int? postId,
+    Action? action,
   }) {
     final _result = create();
     if (id != null) {
@@ -360,6 +339,9 @@ class Comment extends $pb.GeneratedMessage {
     }
     if (postId != null) {
       _result.postId = postId;
+    }
+    if (action != null) {
+      _result.action = action;
     }
     return _result;
   }
@@ -423,53 +405,21 @@ class Comment extends $pb.GeneratedMessage {
   void clearText() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get postId => $_getSZ(4);
+  $core.int get postId => $_getIZ(4);
   @$pb.TagNumber(5)
-  set postId($core.String v) { $_setString(4, v); }
+  set postId($core.int v) { $_setSignedInt32(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasPostId() => $_has(4);
   @$pb.TagNumber(5)
   void clearPostId() => clearField(5);
-}
 
-class Comments extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Comments', createEmptyInstance: create)
-    ..pc<Comment>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'comments', $pb.PbFieldType.PM, subBuilder: Comment.create)
-    ..hasRequiredFields = false
-  ;
-
-  Comments._() : super();
-  factory Comments({
-    $core.Iterable<Comment>? comments,
-  }) {
-    final _result = create();
-    if (comments != null) {
-      _result.comments.addAll(comments);
-    }
-    return _result;
-  }
-  factory Comments.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Comments.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Comments clone() => Comments()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Comments copyWith(void Function(Comments) updates) => super.copyWith((message) => updates(message as Comments)) as Comments; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static Comments create() => Comments._();
-  Comments createEmptyInstance() => create();
-  static $pb.PbList<Comments> createRepeated() => $pb.PbList<Comments>();
-  @$core.pragma('dart2js:noInline')
-  static Comments getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Comments>(create);
-  static Comments? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<Comment> get comments => $_getList(0);
+  @$pb.TagNumber(6)
+  Action get action => $_getN(5);
+  @$pb.TagNumber(6)
+  set action(Action v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAction() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAction() => clearField(6);
 }
 

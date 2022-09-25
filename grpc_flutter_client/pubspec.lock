@@ -236,7 +236,7 @@ packages:
     source: hosted
     version: "2.1.0"
   grpc:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: grpc
       url: "https://pub.dartlang.org"
@@ -355,7 +355,7 @@ packages:
     source: hosted
     version: "1.5.1"
   protobuf:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: protobuf
       url: "https://pub.dartlang.org"
