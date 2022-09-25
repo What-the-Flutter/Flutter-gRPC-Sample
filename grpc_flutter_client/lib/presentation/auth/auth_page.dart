@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:grpc_flutter_client/presentation/auth/auth_controller.dart';
 
 class AuthPage extends GetView<AuthController> {
-  final textController = TextEditingController();
+  final _textController = TextEditingController();
 
   AuthPage({Key? key}) : super(key: key);
 
@@ -30,7 +30,7 @@ class AuthPage extends GetView<AuthController> {
       width: 200,
       child: TextField(
         onChanged: controller.setButtonActive,
-        controller: textController,
+        controller: _textController,
         textAlign: TextAlign.center,
       ),
     );
@@ -48,7 +48,7 @@ class AuthPage extends GetView<AuthController> {
           ),
           onPressed: () {
             if (controller.isButtonActive.value) {
-              controller.authenticate(textController.value.text);
+              controller.authenticate(_textController.value.text);
             }
           },
           child: const Text(
