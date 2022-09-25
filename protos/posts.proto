@@ -5,13 +5,12 @@ import "google/protobuf/timestamp.proto";
 service PostsService {
 rpc CreateUser(User) returns (User);
 
-rpc CreatePost(Post) returns (Post);
-rpc GetAllPosts(Empty) returns (Posts);
-rpc GetPost(PostId) returns (Post);
+rpc CreatePost(Post) returns (Empty);
+rpc GetAllPosts(Empty) returns (stream Post);
 rpc DeletePost (PostId) returns (Empty);
 
-rpc CreateComment(Comment) returns (Comment);
-rpc GetCommentsByPostId(PostId) returns (Comments);
+rpc CreateComment(Comment) returns (Empty);
+rpc GetCommentsByPostId(PostId) returns (stream Comment);
 rpc DeleteComment (CommentId) returns (Empty);
 }
 
@@ -20,6 +19,11 @@ message Empty {}
 message User {
 int32 id = 1;
 string name = 2;
+}
+
+enum Action {
+CREATE = 0;
+DELETE = 1;
 }
 
 message PostId {
@@ -31,10 +35,7 @@ int32 id = 1;
 int32 user_id = 2;
 google.protobuf.Timestamp date = 3;
 string text = 4;
-}
-
-message Posts {
-repeated Post posts = 1;
+Action action = 5;
 }
 
 message CommentId {
@@ -46,9 +47,6 @@ int32 id = 1;
 int32 user_id = 2;
 google.protobuf.Timestamp date = 3;
 string text = 4;
-string post_id = 5;
-}
-
-message Comments {
-repeated Comment comments = 1;
+int32 post_id = 5;
+Action action = 6;
 }

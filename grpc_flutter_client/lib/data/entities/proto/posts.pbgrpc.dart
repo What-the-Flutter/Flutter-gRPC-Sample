@@ -18,33 +18,29 @@ class PostsServiceClient extends $grpc.Client {
       '/PostsService/CreateUser',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.User.fromBuffer(value));
-  static final _$createPost = $grpc.ClientMethod<$0.Post, $0.Post>(
+  static final _$createPost = $grpc.ClientMethod<$0.Post, $0.Empty>(
       '/PostsService/CreatePost',
       ($0.Post value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Post.fromBuffer(value));
-  static final _$getAllPosts = $grpc.ClientMethod<$0.Empty, $0.Posts>(
+      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+  static final _$getAllPosts = $grpc.ClientMethod<$0.Empty, $0.Post>(
       '/PostsService/GetAllPosts',
       ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Posts.fromBuffer(value));
-  static final _$getPost = $grpc.ClientMethod<$0.PostId, $0.Post>(
-      '/PostsService/GetPost',
-      ($0.PostId value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Post.fromBuffer(value));
   static final _$deletePost = $grpc.ClientMethod<$0.PostId, $0.Empty>(
-      '/PostsService/deletePost',
+      '/PostsService/DeletePost',
       ($0.PostId value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
-  static final _$createComment = $grpc.ClientMethod<$0.Comment, $0.Comment>(
+  static final _$createComment = $grpc.ClientMethod<$0.Comment, $0.Empty>(
       '/PostsService/CreateComment',
       ($0.Comment value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Comment.fromBuffer(value));
+      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
   static final _$getCommentsByPostId =
-      $grpc.ClientMethod<$0.PostId, $0.Comments>(
+      $grpc.ClientMethod<$0.PostId, $0.Comment>(
           '/PostsService/GetCommentsByPostId',
           ($0.PostId value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.Comments.fromBuffer(value));
+          ($core.List<$core.int> value) => $0.Comment.fromBuffer(value));
   static final _$deleteComment = $grpc.ClientMethod<$0.CommentId, $0.Empty>(
-      '/PostsService/deleteComment',
+      '/PostsService/DeleteComment',
       ($0.CommentId value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
 
@@ -58,19 +54,16 @@ class PostsServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Post> createPost($0.Post request,
+  $grpc.ResponseFuture<$0.Empty> createPost($0.Post request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createPost, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Posts> getAllPosts($0.Empty request,
+  $grpc.ResponseStream<$0.Post> getAllPosts($0.Empty request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getAllPosts, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.Post> getPost($0.PostId request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getPost, request, options: options);
+    return $createStreamingCall(
+        _$getAllPosts, $async.Stream.fromIterable([request]),
+        options: options);
   }
 
   $grpc.ResponseFuture<$0.Empty> deletePost($0.PostId request,
@@ -78,14 +71,16 @@ class PostsServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deletePost, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Comment> createComment($0.Comment request,
+  $grpc.ResponseFuture<$0.Empty> createComment($0.Comment request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createComment, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Comments> getCommentsByPostId($0.PostId request,
+  $grpc.ResponseStream<$0.Comment> getCommentsByPostId($0.PostId request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getCommentsByPostId, request, options: options);
+    return $createStreamingCall(
+        _$getCommentsByPostId, $async.Stream.fromIterable([request]),
+        options: options);
   }
 
   $grpc.ResponseFuture<$0.Empty> deleteComment($0.CommentId request,
@@ -105,50 +100,43 @@ abstract class PostsServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.User.fromBuffer(value),
         ($0.User value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Post, $0.Post>(
+    $addMethod($grpc.ServiceMethod<$0.Post, $0.Empty>(
         'CreatePost',
         createPost_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Post.fromBuffer(value),
-        ($0.Post value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $0.Posts>(
+        ($0.Empty value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $0.Post>(
         'GetAllPosts',
         getAllPosts_Pre,
         false,
-        false,
+        true,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($0.Posts value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PostId, $0.Post>(
-        'GetPost',
-        getPost_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.PostId.fromBuffer(value),
         ($0.Post value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.PostId, $0.Empty>(
-        'deletePost',
+        'DeletePost',
         deletePost_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.PostId.fromBuffer(value),
         ($0.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Comment, $0.Comment>(
+    $addMethod($grpc.ServiceMethod<$0.Comment, $0.Empty>(
         'CreateComment',
         createComment_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Comment.fromBuffer(value),
-        ($0.Comment value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PostId, $0.Comments>(
+        ($0.Empty value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostId, $0.Comment>(
         'GetCommentsByPostId',
         getCommentsByPostId_Pre,
         false,
-        false,
+        true,
         ($core.List<$core.int> value) => $0.PostId.fromBuffer(value),
-        ($0.Comments value) => value.writeToBuffer()));
+        ($0.Comment value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.CommentId, $0.Empty>(
-        'deleteComment',
+        'DeleteComment',
         deleteComment_Pre,
         false,
         false,
@@ -161,19 +149,14 @@ abstract class PostsServiceBase extends $grpc.Service {
     return createUser(call, await request);
   }
 
-  $async.Future<$0.Post> createPost_Pre(
+  $async.Future<$0.Empty> createPost_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Post> request) async {
     return createPost(call, await request);
   }
 
-  $async.Future<$0.Posts> getAllPosts_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getAllPosts(call, await request);
-  }
-
-  $async.Future<$0.Post> getPost_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.PostId> request) async {
-    return getPost(call, await request);
+  $async.Stream<$0.Post> getAllPosts_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async* {
+    yield* getAllPosts(call, await request);
   }
 
   $async.Future<$0.Empty> deletePost_Pre(
@@ -181,14 +164,14 @@ abstract class PostsServiceBase extends $grpc.Service {
     return deletePost(call, await request);
   }
 
-  $async.Future<$0.Comment> createComment_Pre(
+  $async.Future<$0.Empty> createComment_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Comment> request) async {
     return createComment(call, await request);
   }
 
-  $async.Future<$0.Comments> getCommentsByPostId_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.PostId> request) async {
-    return getCommentsByPostId(call, await request);
+  $async.Stream<$0.Comment> getCommentsByPostId_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.PostId> request) async* {
+    yield* getCommentsByPostId(call, await request);
   }
 
   $async.Future<$0.Empty> deleteComment_Pre(
@@ -197,13 +180,12 @@ abstract class PostsServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.User> createUser($grpc.ServiceCall call, $0.User request);
-  $async.Future<$0.Post> createPost($grpc.ServiceCall call, $0.Post request);
-  $async.Future<$0.Posts> getAllPosts($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$0.Post> getPost($grpc.ServiceCall call, $0.PostId request);
+  $async.Future<$0.Empty> createPost($grpc.ServiceCall call, $0.Post request);
+  $async.Stream<$0.Post> getAllPosts($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$0.Empty> deletePost($grpc.ServiceCall call, $0.PostId request);
-  $async.Future<$0.Comment> createComment(
+  $async.Future<$0.Empty> createComment(
       $grpc.ServiceCall call, $0.Comment request);
-  $async.Future<$0.Comments> getCommentsByPostId(
+  $async.Stream<$0.Comment> getCommentsByPostId(
       $grpc.ServiceCall call, $0.PostId request);
   $async.Future<$0.Empty> deleteComment(
       $grpc.ServiceCall call, $0.CommentId request);
