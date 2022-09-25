@@ -10,5 +10,6 @@ class Post with _$Post {
     required int userId,
     required String text,
     required DateTime date,
+    bool? wasDeleted,
   }) = _Post;
 }

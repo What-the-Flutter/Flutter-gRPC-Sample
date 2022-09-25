@@ -11,7 +11,5 @@ class PostInteractor extends BaseInteractor {
 
   Future<Post> createPost(Post post) => _postRepository.create(post);
 
-  Future<Post> getPost(int id) => _postRepository.get(id);
-
   Future<void> deletePost(int id) => _postRepository.delete(id);
 }
