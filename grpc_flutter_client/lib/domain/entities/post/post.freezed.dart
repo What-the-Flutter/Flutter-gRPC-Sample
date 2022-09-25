@@ -20,7 +20,7 @@ mixin _$Post {
   int get userId => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
-  bool? get wasDeleted => throw _privateConstructorUsedError;
+  Action get action => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PostCopyWith<Post> get copyWith => throw _privateConstructorUsedError;
@@ -30,7 +30,7 @@ mixin _$Post {
 abstract class $PostCopyWith<$Res> {
   factory $PostCopyWith(Post value, $Res Function(Post) then) =
       _$PostCopyWithImpl<$Res>;
-  $Res call({int id, int userId, String text, DateTime date, bool? wasDeleted});
+  $Res call({int id, int userId, String text, DateTime date, Action action});
 }
 
 /// @nodoc
@@ -47,7 +47,7 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
     Object? userId = freezed,
     Object? text = freezed,
     Object? date = freezed,
-    Object? wasDeleted = freezed,
+    Object? action = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -66,10 +66,10 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      wasDeleted: wasDeleted == freezed
-          ? _value.wasDeleted
-          : wasDeleted // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      action: action == freezed
+          ? _value.action
+          : action // ignore: cast_nullable_to_non_nullable
+              as Action,
     ));
   }
 }
@@ -79,7 +79,7 @@ abstract class _$$_PostCopyWith<$Res> implements $PostCopyWith<$Res> {
   factory _$$_PostCopyWith(_$_Post value, $Res Function(_$_Post) then) =
       __$$_PostCopyWithImpl<$Res>;
   @override
-  $Res call({int id, int userId, String text, DateTime date, bool? wasDeleted});
+  $Res call({int id, int userId, String text, DateTime date, Action action});
 }
 
 /// @nodoc
@@ -97,7 +97,7 @@ class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
     Object? userId = freezed,
     Object? text = freezed,
     Object? date = freezed,
-    Object? wasDeleted = freezed,
+    Object? action = freezed,
   }) {
     return _then(_$_Post(
       id: id == freezed
@@ -116,10 +116,10 @@ class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      wasDeleted: wasDeleted == freezed
-          ? _value.wasDeleted
-          : wasDeleted // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      action: action == freezed
+          ? _value.action
+          : action // ignore: cast_nullable_to_non_nullable
+              as Action,
     ));
   }
 }
@@ -132,7 +132,7 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
       required this.userId,
       required this.text,
       required this.date,
-      this.wasDeleted});
+      required this.action});
 
   @override
   final int id;
@@ -143,11 +143,11 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
   @override
   final DateTime date;
   @override
-  final bool? wasDeleted;
+  final Action action;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Post(id: $id, userId: $userId, text: $text, date: $date, wasDeleted: $wasDeleted)';
+    return 'Post(id: $id, userId: $userId, text: $text, date: $date, action: $action)';
   }
 
   @override
@@ -159,7 +159,7 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
       ..add(DiagnosticsProperty('userId', userId))
       ..add(DiagnosticsProperty('text', text))
       ..add(DiagnosticsProperty('date', date))
-      ..add(DiagnosticsProperty('wasDeleted', wasDeleted));
+      ..add(DiagnosticsProperty('action', action));
   }
 
   @override
@@ -171,8 +171,7 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
             const DeepCollectionEquality().equals(other.userId, userId) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.date, date) &&
-            const DeepCollectionEquality()
-                .equals(other.wasDeleted, wasDeleted));
+            const DeepCollectionEquality().equals(other.action, action));
   }
 
   @override
@@ -182,7 +181,7 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
       const DeepCollectionEquality().hash(userId),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(date),
-      const DeepCollectionEquality().hash(wasDeleted));
+      const DeepCollectionEquality().hash(action));
 
   @JsonKey(ignore: true)
   @override
@@ -196,7 +195,7 @@ abstract class _Post implements Post {
       required final int userId,
       required final String text,
       required final DateTime date,
-      final bool? wasDeleted}) = _$_Post;
+      required final Action action}) = _$_Post;
 
   @override
   int get id;
@@ -207,7 +206,7 @@ abstract class _Post implements Post {
   @override
   DateTime get date;
   @override
-  bool? get wasDeleted;
+  Action get action;
   @override
   @JsonKey(ignore: true)
   _$$_PostCopyWith<_$_Post> get copyWith => throw _privateConstructorUsedError;

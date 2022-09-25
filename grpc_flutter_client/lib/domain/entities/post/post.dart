@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 
 part 'post.freezed.dart';
 
+enum Action {add, delete}
+
 @freezed
 class Post with _$Post {
   const factory Post({
@@ -10,6 +12,6 @@ class Post with _$Post {
     required int userId,
     required String text,
     required DateTime date,
-    bool? wasDeleted,
+    required Action action,
   }) = _Post;
 }
