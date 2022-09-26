@@ -1,15 +1,14 @@
 name: grpc_dart_server
-description: A sample command-line application.
+description: A Dart gRPC server.
 version: 1.0.0
-# homepage: https://www.example.com
 
 environment:
   sdk: '>=2.18.0 <3.0.0'
 
 dependencies:
-  grpc: ^3.0.2
-  protobuf: ^2.1.0
+  fixnum: ^1.0.1
 
 dev_dependencies:
+  grpc: ^3.0.2
+  protobuf: ^2.1.0
   lints: ^2.0.0
-  test: ^1.16.0
