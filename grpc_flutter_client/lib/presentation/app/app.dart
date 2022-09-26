@@ -5,8 +5,8 @@ import 'package:grpc_flutter_client/presentation/auth/auth_binding.dart';
 import 'package:grpc_flutter_client/presentation/auth/auth_page.dart';
 import 'package:grpc_flutter_client/presentation/home/home_binding.dart';
 import 'package:grpc_flutter_client/presentation/home/home_page.dart';
-import 'package:grpc_flutter_client/presentation/home/post_creating/post_creating_binding.dart';
-import 'package:grpc_flutter_client/presentation/home/post_creating/post_creating_page.dart';
+import 'package:grpc_flutter_client/presentation/post_creating/post_creating_binding.dart';
+import 'package:grpc_flutter_client/presentation/post_creating/post_creating_page.dart';
 
 import 'navigation/routes.dart';
 
