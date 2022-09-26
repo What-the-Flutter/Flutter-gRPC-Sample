@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grpc_flutter_client/presentation/home/post_creating/post_creating_controller.dart';
+import 'package:grpc_flutter_client/presentation/post_creating/post_creating_controller.dart';
 import 'package:grpc_flutter_client/presentation/widgets/text_button.dart';
 
 class PostCreatingPage extends GetView<PostCreatingController> {
