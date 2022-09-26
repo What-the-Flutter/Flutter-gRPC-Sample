@@ -17,7 +17,7 @@ rpc DeleteComment (CommentId) returns (Empty);
 message Empty {}
 
 message User {
-int32 id = 1;
+int64 id = 1;
 string name = 2;
 }
 
@@ -32,7 +32,7 @@ int32 id = 1;
 
 message Post {
 int32 id = 1;
-int32 user_id = 2;
+int64 user_id = 2;
 google.protobuf.Timestamp date = 3;
 string text = 4;
 Action action = 5;
@@ -44,7 +44,7 @@ int32 id = 1;
 
 message Comment {
 int32 id = 1;
-int32 user_id = 2;
+int64 user_id = 2;
 google.protobuf.Timestamp date = 3;
 string text = 4;
 int32 post_id = 5;
