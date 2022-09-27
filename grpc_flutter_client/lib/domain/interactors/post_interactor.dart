@@ -9,7 +9,7 @@ class PostInteractor extends BaseInteractor {
 
   Stream<Post> get allPosts => _postRepository.allPosts;
 
-  Future<Post> createPost(Post post) => _postRepository.create(post);
+  Future<void> createPost(Post post) => _postRepository.create(post);
 
   Future<void> deletePost(int id) => _postRepository.delete(id);
 }
