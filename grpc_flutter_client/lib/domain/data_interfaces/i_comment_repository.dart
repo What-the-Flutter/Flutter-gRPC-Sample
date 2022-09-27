@@ -3,5 +3,6 @@ import 'entity_repository.dart';
 
 abstract class ICommentRepository implements EntityRepository<Comment> {
   Stream<Comment> getAllByPostId(int postId);
+  Future<void> create(Comment comment);
   Future<void> delete(int id);
 }

@@ -9,7 +9,7 @@ class CommentInteractor extends BaseInteractor {
 
   Stream<Comment> getAllCommentsByPostId(int postId) => _commentRepository.getAllByPostId(postId);
 
-  Future<Comment> createComment(Comment comment) => _commentRepository.create(comment);
+  Future<void> createComment(Comment comment) => _commentRepository.create(comment);
 
   Future<void> deleteComment(int id) => _commentRepository.delete(id);
 }
