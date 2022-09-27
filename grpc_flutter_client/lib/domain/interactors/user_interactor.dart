@@ -4,8 +4,11 @@ import 'package:grpc_flutter_client/domain/interactors/base_interactor.dart';
 
 class UserInteractor extends BaseInteractor {
   final IUserRepository _userRepository;
+  late final User user;
 
   UserInteractor(this._userRepository);
 
-  Future<User> createUser(User user) => _userRepository.create(user);
+  Future<void> createUser(User user) async {
+    user = await _userRepository.create(user);
+  }
 }

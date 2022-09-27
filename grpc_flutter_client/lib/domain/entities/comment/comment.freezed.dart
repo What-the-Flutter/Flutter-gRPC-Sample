@@ -19,6 +19,7 @@ mixin _$Comment {
   int get id => throw _privateConstructorUsedError;
   int get userId => throw _privateConstructorUsedError;
   int get postId => throw _privateConstructorUsedError;
+  String get authorName => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
   Action get action => throw _privateConstructorUsedError;
@@ -35,6 +36,7 @@ abstract class $CommentCopyWith<$Res> {
       {int id,
       int userId,
       int postId,
+      String authorName,
       String text,
       DateTime date,
       Action action});
@@ -53,6 +55,7 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
     Object? id = freezed,
     Object? userId = freezed,
     Object? postId = freezed,
+    Object? authorName = freezed,
     Object? text = freezed,
     Object? date = freezed,
     Object? action = freezed,
@@ -70,6 +73,10 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
           ? _value.postId
           : postId // ignore: cast_nullable_to_non_nullable
               as int,
+      authorName: authorName == freezed
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String,
       text: text == freezed
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -96,6 +103,7 @@ abstract class _$$_CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
       {int id,
       int userId,
       int postId,
+      String authorName,
       String text,
       DateTime date,
       Action action});
@@ -115,6 +123,7 @@ class __$$_CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res>
     Object? id = freezed,
     Object? userId = freezed,
     Object? postId = freezed,
+    Object? authorName = freezed,
     Object? text = freezed,
     Object? date = freezed,
     Object? action = freezed,
@@ -132,6 +141,10 @@ class __$$_CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res>
           ? _value.postId
           : postId // ignore: cast_nullable_to_non_nullable
               as int,
+      authorName: authorName == freezed
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String,
       text: text == freezed
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -155,6 +168,7 @@ class _$_Comment with DiagnosticableTreeMixin implements _Comment {
       {required this.id,
       required this.userId,
       required this.postId,
+      required this.authorName,
       required this.text,
       required this.date,
       required this.action});
@@ -166,6 +180,8 @@ class _$_Comment with DiagnosticableTreeMixin implements _Comment {
   @override
   final int postId;
   @override
+  final String authorName;
+  @override
   final String text;
   @override
   final DateTime date;
@@ -174,7 +190,7 @@ class _$_Comment with DiagnosticableTreeMixin implements _Comment {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Comment(id: $id, userId: $userId, postId: $postId, text: $text, date: $date, action: $action)';
+    return 'Comment(id: $id, userId: $userId, postId: $postId, authorName: $authorName, text: $text, date: $date, action: $action)';
   }
 
   @override
@@ -185,6 +201,7 @@ class _$_Comment with DiagnosticableTreeMixin implements _Comment {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('userId', userId))
       ..add(DiagnosticsProperty('postId', postId))
+      ..add(DiagnosticsProperty('authorName', authorName))
       ..add(DiagnosticsProperty('text', text))
       ..add(DiagnosticsProperty('date', date))
       ..add(DiagnosticsProperty('action', action));
@@ -198,6 +215,8 @@ class _$_Comment with DiagnosticableTreeMixin implements _Comment {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.userId, userId) &&
             const DeepCollectionEquality().equals(other.postId, postId) &&
+            const DeepCollectionEquality()
+                .equals(other.authorName, authorName) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.date, date) &&
             const DeepCollectionEquality().equals(other.action, action));
@@ -209,6 +228,7 @@ class _$_Comment with DiagnosticableTreeMixin implements _Comment {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(userId),
       const DeepCollectionEquality().hash(postId),
+      const DeepCollectionEquality().hash(authorName),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(date),
       const DeepCollectionEquality().hash(action));
@@ -224,6 +244,7 @@ abstract class _Comment implements Comment {
       {required final int id,
       required final int userId,
       required final int postId,
+      required final String authorName,
       required final String text,
       required final DateTime date,
       required final Action action}) = _$_Comment;
@@ -234,6 +255,8 @@ abstract class _Comment implements Comment {
   int get userId;
   @override
   int get postId;
+  @override
+  String get authorName;
   @override
   String get text;
   @override

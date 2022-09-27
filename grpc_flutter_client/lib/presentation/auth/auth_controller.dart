@@ -16,11 +16,9 @@ class AuthController extends GetxController {
   }
 
   void authenticate(String name) async {
-    final user = await _userInteractor.createUser(User(name: name, id: -1));
-    Get.offNamed(Routes.home, arguments: user);
+    await _userInteractor.createUser(User.withoutId(name: name));
+    Get.offNamed(Routes.home);
   }
 
-  void setButtonActive(String text) {
-    isButtonActive.value = text.isNotEmpty;
-  }
+  void setButtonActive(String text) => isButtonActive.value = text.isNotEmpty;
 }

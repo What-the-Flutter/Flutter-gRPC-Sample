@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Post {
   int get id => throw _privateConstructorUsedError;
   int get userId => throw _privateConstructorUsedError;
+  String get authorName => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
   Action get action => throw _privateConstructorUsedError;
@@ -30,7 +31,13 @@ mixin _$Post {
 abstract class $PostCopyWith<$Res> {
   factory $PostCopyWith(Post value, $Res Function(Post) then) =
       _$PostCopyWithImpl<$Res>;
-  $Res call({int id, int userId, String text, DateTime date, Action action});
+  $Res call(
+      {int id,
+      int userId,
+      String authorName,
+      String text,
+      DateTime date,
+      Action action});
 }
 
 /// @nodoc
@@ -45,6 +52,7 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? userId = freezed,
+    Object? authorName = freezed,
     Object? text = freezed,
     Object? date = freezed,
     Object? action = freezed,
@@ -58,6 +66,10 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as int,
+      authorName: authorName == freezed
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String,
       text: text == freezed
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -79,7 +91,13 @@ abstract class _$$_PostCopyWith<$Res> implements $PostCopyWith<$Res> {
   factory _$$_PostCopyWith(_$_Post value, $Res Function(_$_Post) then) =
       __$$_PostCopyWithImpl<$Res>;
   @override
-  $Res call({int id, int userId, String text, DateTime date, Action action});
+  $Res call(
+      {int id,
+      int userId,
+      String authorName,
+      String text,
+      DateTime date,
+      Action action});
 }
 
 /// @nodoc
@@ -95,6 +113,7 @@ class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? userId = freezed,
+    Object? authorName = freezed,
     Object? text = freezed,
     Object? date = freezed,
     Object? action = freezed,
@@ -108,6 +127,10 @@ class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as int,
+      authorName: authorName == freezed
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String,
       text: text == freezed
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -130,6 +153,7 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
   const _$_Post(
       {required this.id,
       required this.userId,
+      required this.authorName,
       required this.text,
       required this.date,
       required this.action});
@@ -139,6 +163,8 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
   @override
   final int userId;
   @override
+  final String authorName;
+  @override
   final String text;
   @override
   final DateTime date;
@@ -147,7 +173,7 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Post(id: $id, userId: $userId, text: $text, date: $date, action: $action)';
+    return 'Post(id: $id, userId: $userId, authorName: $authorName, text: $text, date: $date, action: $action)';
   }
 
   @override
@@ -157,6 +183,7 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
       ..add(DiagnosticsProperty('type', 'Post'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('userId', userId))
+      ..add(DiagnosticsProperty('authorName', authorName))
       ..add(DiagnosticsProperty('text', text))
       ..add(DiagnosticsProperty('date', date))
       ..add(DiagnosticsProperty('action', action));
@@ -169,6 +196,8 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
             other is _$_Post &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.userId, userId) &&
+            const DeepCollectionEquality()
+                .equals(other.authorName, authorName) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality().equals(other.date, date) &&
             const DeepCollectionEquality().equals(other.action, action));
@@ -179,6 +208,7 @@ class _$_Post with DiagnosticableTreeMixin implements _Post {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(userId),
+      const DeepCollectionEquality().hash(authorName),
       const DeepCollectionEquality().hash(text),
       const DeepCollectionEquality().hash(date),
       const DeepCollectionEquality().hash(action));
@@ -193,6 +223,7 @@ abstract class _Post implements Post {
   const factory _Post(
       {required final int id,
       required final int userId,
+      required final String authorName,
       required final String text,
       required final DateTime date,
       required final Action action}) = _$_Post;
@@ -201,6 +232,8 @@ abstract class _Post implements Post {
   int get id;
   @override
   int get userId;
+  @override
+  String get authorName;
   @override
   String get text;
   @override

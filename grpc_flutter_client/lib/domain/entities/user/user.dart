@@ -9,4 +9,11 @@ class User with _$User {
     required int id,
     required String name,
   }) = _User;
+
+  factory User.withoutId({required String name}) {
+    return User(
+      id: -1,
+      name: name,
+    );
+  }
 }
