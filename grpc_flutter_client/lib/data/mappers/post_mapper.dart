@@ -7,7 +7,7 @@ import 'package:grpc_flutter_client/domain/entities/post/post.dart';
 class PostMapper {
   Post fromProto(ProtoPost proto) {
     return Post(
-      id: proto.id,
+      id: proto.id.toInt(),
       userId: proto.userId.toInt(),
       text: proto.text,
       date: DateTime.fromMillisecondsSinceEpoch(proto.date.seconds.toInt()).toLocal(),
@@ -18,7 +18,7 @@ class PostMapper {
 
   ProtoPost toProto(Post post) {
     return ProtoPost(
-      id: post.id,
+      id: Int64(post.id),
       userId: Int64(post.userId),
       text: post.text,
       date: Timestamp(seconds: Int64(post.date.millisecondsSinceEpoch)),
@@ -29,7 +29,7 @@ class PostMapper {
 
   ProtoPostId toProtoPostId(int postId) {
     return ProtoPostId(
-      id: postId,
+      id: Int64(postId),
     );
   }
 }

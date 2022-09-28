@@ -4,13 +4,13 @@ import 'package:grpc_dart_server/entities/proto/posts.pb.dart';
 
 class DatabaseService {
   ProtoComment createComment(ProtoComment comment) {
-    comment.id = comment.date.nanos;
+    comment.id = comment.date.seconds;
     comments.add(comment);
     return comment;
   }
 
   ProtoPost createPost(ProtoPost post) {
-    post.id = post.date.nanos;
+    post.id = post.date.seconds;
     posts.add(post);
     return post;
   }
@@ -21,11 +21,11 @@ class DatabaseService {
     return user;
   }
 
-  void deleteComment(int commentId) {
+  void deleteComment(Int64 commentId) {
     comments.removeWhere((element) => element.id == commentId);
   }
 
-  void deletePost(int postId) {
+  void deletePost(Int64 postId) {
     posts.removeWhere((element) => element.id == postId);
   }
 
@@ -33,15 +33,15 @@ class DatabaseService {
     return posts;
   }
 
-  List<ProtoComment> getCommentsByPostId(int postId) {
+  List<ProtoComment> getCommentsByPostId(Int64 postId) {
     return comments.where((element) => element.postId == postId).toList();
   }
 
-  ProtoPost getPost(int postId) {
+  ProtoPost getPost(Int64 postId) {
     return posts.firstWhere((element) => element.id == postId);
   }
 
-  ProtoComment getComment(int commentId) {
+  ProtoComment getComment(Int64 commentId) {
     return comments.firstWhere((element) => element.id == commentId);
   }
 }

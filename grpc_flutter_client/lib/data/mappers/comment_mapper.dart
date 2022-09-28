@@ -7,9 +7,9 @@ import 'package:grpc_flutter_client/domain/entities/comment/comment.dart';
 class CommentMapper {
   Comment fromProto(ProtoComment proto) {
     return Comment(
-      id: proto.id,
+      id: proto.id.toInt(),
       userId: proto.userId.toInt(),
-      postId: proto.postId,
+      postId: proto.postId.toInt(),
       text: proto.text,
       date: DateTime.fromMillisecondsSinceEpoch(proto.date.seconds.toInt()).toLocal(),
       action: proto.action.fromProto(),
@@ -19,9 +19,9 @@ class CommentMapper {
 
   ProtoComment toProto(Comment comment) {
     return ProtoComment(
-      id: comment.id,
+      id: Int64(comment.id),
       userId: Int64(comment.userId),
-      postId: comment.postId,
+      postId: Int64(comment.postId),
       text: comment.text,
       date: Timestamp(seconds: Int64(comment.date.millisecondsSinceEpoch)),
       action: comment.action.toProto(),
@@ -31,7 +31,7 @@ class CommentMapper {
 
   ProtoCommentId toProtoCommentId(int commentId) {
     return ProtoCommentId(
-      id: commentId,
+      id: Int64(commentId),
     );
   }
 }

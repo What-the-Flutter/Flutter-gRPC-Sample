@@ -108,13 +108,13 @@ class ProtoUser extends $pb.GeneratedMessage {
 
 class ProtoPostId extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProtoPostId', createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
   ProtoPostId._() : super();
   factory ProtoPostId({
-    $core.int? id,
+    $fixnum.Int64? id,
   }) {
     final _result = create();
     if (id != null) {
@@ -144,9 +144,9 @@ class ProtoPostId extends $pb.GeneratedMessage {
   static ProtoPostId? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get id => $_getIZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($core.int v) { $_setSignedInt32(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -155,7 +155,7 @@ class ProtoPostId extends $pb.GeneratedMessage {
 
 class ProtoPost extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProtoPost', createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'date', subBuilder: $1.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text')
@@ -166,7 +166,7 @@ class ProtoPost extends $pb.GeneratedMessage {
 
   ProtoPost._() : super();
   factory ProtoPost({
-    $core.int? id,
+    $fixnum.Int64? id,
     $fixnum.Int64? userId,
     $1.Timestamp? date,
     $core.String? text,
@@ -216,9 +216,9 @@ class ProtoPost extends $pb.GeneratedMessage {
   static ProtoPost? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get id => $_getIZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($core.int v) { $_setSignedInt32(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -274,13 +274,13 @@ class ProtoPost extends $pb.GeneratedMessage {
 
 class ProtoCommentId extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProtoCommentId', createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
   ProtoCommentId._() : super();
   factory ProtoCommentId({
-    $core.int? id,
+    $fixnum.Int64? id,
   }) {
     final _result = create();
     if (id != null) {
@@ -310,9 +310,9 @@ class ProtoCommentId extends $pb.GeneratedMessage {
   static ProtoCommentId? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get id => $_getIZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($core.int v) { $_setSignedInt32(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -321,11 +321,11 @@ class ProtoCommentId extends $pb.GeneratedMessage {
 
 class ProtoComment extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProtoComment', createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'date', subBuilder: $1.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text')
-    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'postId', $pb.PbFieldType.O3)
+    ..aInt64(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'postId')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userName')
     ..e<ProtoAction>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: ProtoAction.CREATE, valueOf: ProtoAction.valueOf, enumValues: ProtoAction.values)
     ..hasRequiredFields = false
@@ -333,11 +333,11 @@ class ProtoComment extends $pb.GeneratedMessage {
 
   ProtoComment._() : super();
   factory ProtoComment({
-    $core.int? id,
+    $fixnum.Int64? id,
     $fixnum.Int64? userId,
     $1.Timestamp? date,
     $core.String? text,
-    $core.int? postId,
+    $fixnum.Int64? postId,
     $core.String? userName,
     ProtoAction? action,
   }) {
@@ -387,9 +387,9 @@ class ProtoComment extends $pb.GeneratedMessage {
   static ProtoComment? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get id => $_getIZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($core.int v) { $_setSignedInt32(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -425,9 +425,9 @@ class ProtoComment extends $pb.GeneratedMessage {
   void clearText() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.int get postId => $_getIZ(4);
+  $fixnum.Int64 get postId => $_getI64(4);
   @$pb.TagNumber(5)
-  set postId($core.int v) { $_setSignedInt32(4, v); }
+  set postId($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasPostId() => $_has(4);
   @$pb.TagNumber(5)

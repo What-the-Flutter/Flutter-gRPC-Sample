@@ -13,13 +13,16 @@ class PostsService extends PostsServiceBase {
   @override
   Future<Empty> createComment(ServiceCall call, ProtoComment request) async {
     final comment = _databaseDataSource.createComment(request);
-    _commentsStream.sink.add(comment);
+    comment.freeze();
+    var createdComment = comment.rebuild((comment) => comment.action = ProtoAction.CREATE);
+    _commentsStream.sink.add(createdComment);
     return Empty();
   }
 
   @override
   Future<Empty> deleteComment(ServiceCall call, ProtoCommentId request) async {
     var comment = _databaseDataSource.getComment(request.id);
+    comment.freeze();
     var deletedComment = comment.rebuild((comment) => comment.action = ProtoAction.DELETE);
     _commentsStream.sink.add(deletedComment);
     _databaseDataSource.deleteComment(request.id);
@@ -29,6 +32,7 @@ class PostsService extends PostsServiceBase {
   @override
   Future<Empty> deletePost(ServiceCall call, ProtoPostId request) async {
     var post = _databaseDataSource.getPost(request.id);
+    post.freeze();
     var deletedPost = post.rebuild((post) => post.action = ProtoAction.DELETE);
     _postsStream.sink.add(deletedPost);
 
@@ -43,7 +47,9 @@ class PostsService extends PostsServiceBase {
   @override
   Future<Empty> createPost(ServiceCall call, ProtoPost request) async {
     final post = _databaseDataSource.createPost(request);
-    _postsStream.add(post);
+    post.freeze();
+    var createdPost = post.rebuild((post) => post.action = ProtoAction.CREATE);
+    _postsStream.add(createdPost);
     return Empty();
   }
 
