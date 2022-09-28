@@ -15,7 +15,7 @@ class PostCreatingPage extends GetView<PostCreatingController> {
         title: const Text('Create a new post'),
         centerTitle: true,
         leading: IconButton(
-          onPressed: controller.goBack,
+          onPressed: controller.goToPrevPage,
           icon: const Icon(Icons.arrow_back),
         ),
       ),
