@@ -2,17 +2,17 @@ import 'package:grpc_flutter_client/data/entities/proto/posts.pbgrpc.dart';
 import 'package:grpc/grpc.dart';
 
 class RemoteDataProvider {
-  late final PostsServiceClient? _grpcClient;
+  PostsServiceClient? _grpcClient;
   late final ClientChannel? _channel;
 
   PostsServiceClient get grpcClient {
     if (_grpcClient != null) return _grpcClient!;
 
-    _openConnection();
+    _createChannel();
     return _grpcClient!;
   }
 
-  void _openConnection() {
+  void _createChannel() {
     _channel = ClientChannel(
       'localhost',
       port: 50001,
