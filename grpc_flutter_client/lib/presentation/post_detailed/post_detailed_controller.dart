@@ -40,7 +40,7 @@ class PostDetailedController extends GetxController {
 
   void onCommentData(Comment newComment) {
     if (newComment.action == Action.add) {
-      comments.add(newComment);
+      comments.insert(0, newComment);
     } else if (newComment.action == Action.delete) {
       comments.removeWhere((comment) => comment.id == newComment.id);
     }
