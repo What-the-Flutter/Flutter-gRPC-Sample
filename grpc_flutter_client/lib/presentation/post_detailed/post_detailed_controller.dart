@@ -8,7 +8,6 @@ import 'package:grpc_flutter_client/domain/entities/user/user.dart';
 import 'package:grpc_flutter_client/domain/interactors/post_interactor.dart';
 import 'package:grpc_flutter_client/domain/interactors/user_interactor.dart';
 import 'package:grpc_flutter_client/domain/interactors/comment_interactor.dart';
-import 'package:grpc_flutter_client/presentation/app/navigation/routes.dart';
 
 class PostDetailedController extends GetxController {
   final UserInteractor _userInteractor;
@@ -41,13 +40,13 @@ class PostDetailedController extends GetxController {
 
   void onCommentData(Comment newComment) {
     if (newComment.action == Action.add) {
-      comments.add(newComment);
+      comments.insert(0, newComment);
     } else if (newComment.action == Action.delete) {
       comments.removeWhere((comment) => comment.id == newComment.id);
     }
   }
 
-  void goHome() => Get.offNamed(Routes.home);
+  void goHome() => Get.back();
 
   void deletePost() async {
     await _postInteractor.deletePost(currentPost.id);

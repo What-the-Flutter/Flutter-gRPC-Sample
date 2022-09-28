@@ -45,15 +45,15 @@ class Empty extends $pb.GeneratedMessage {
   static Empty? _defaultInstance;
 }
 
-class User extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'User', createEmptyInstance: create)
+class ProtoUser extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProtoUser', createEmptyInstance: create)
     ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
-  User._() : super();
-  factory User({
+  ProtoUser._() : super();
+  factory ProtoUser({
     $fixnum.Int64? id,
     $core.String? name,
   }) {
@@ -66,26 +66,26 @@ class User extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory User.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory User.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ProtoUser.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ProtoUser.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  User clone() => User()..mergeFromMessage(this);
+  ProtoUser clone() => ProtoUser()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  User copyWith(void Function(User) updates) => super.copyWith((message) => updates(message as User)) as User; // ignore: deprecated_member_use
+  ProtoUser copyWith(void Function(ProtoUser) updates) => super.copyWith((message) => updates(message as ProtoUser)) as ProtoUser; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static User create() => User._();
-  User createEmptyInstance() => create();
-  static $pb.PbList<User> createRepeated() => $pb.PbList<User>();
+  static ProtoUser create() => ProtoUser._();
+  ProtoUser createEmptyInstance() => create();
+  static $pb.PbList<ProtoUser> createRepeated() => $pb.PbList<ProtoUser>();
   @$core.pragma('dart2js:noInline')
-  static User getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<User>(create);
-  static User? _defaultInstance;
+  static ProtoUser getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProtoUser>(create);
+  static ProtoUser? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
@@ -106,15 +106,15 @@ class User extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 }
 
-class PostId extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PostId', createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+class ProtoPostId extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProtoPostId', createEmptyInstance: create)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
-  PostId._() : super();
-  factory PostId({
-    $core.int? id,
+  ProtoPostId._() : super();
+  factory ProtoPostId({
+    $fixnum.Int64? id,
   }) {
     final _result = create();
     if (id != null) {
@@ -122,54 +122,56 @@ class PostId extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory PostId.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PostId.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ProtoPostId.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ProtoPostId.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PostId clone() => PostId()..mergeFromMessage(this);
+  ProtoPostId clone() => ProtoPostId()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PostId copyWith(void Function(PostId) updates) => super.copyWith((message) => updates(message as PostId)) as PostId; // ignore: deprecated_member_use
+  ProtoPostId copyWith(void Function(ProtoPostId) updates) => super.copyWith((message) => updates(message as ProtoPostId)) as ProtoPostId; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static PostId create() => PostId._();
-  PostId createEmptyInstance() => create();
-  static $pb.PbList<PostId> createRepeated() => $pb.PbList<PostId>();
+  static ProtoPostId create() => ProtoPostId._();
+  ProtoPostId createEmptyInstance() => create();
+  static $pb.PbList<ProtoPostId> createRepeated() => $pb.PbList<ProtoPostId>();
   @$core.pragma('dart2js:noInline')
-  static PostId getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PostId>(create);
-  static PostId? _defaultInstance;
+  static ProtoPostId getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProtoPostId>(create);
+  static ProtoPostId? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get id => $_getIZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($core.int v) { $_setSignedInt32(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 }
 
-class Post extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Post', createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+class ProtoPost extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProtoPost', createEmptyInstance: create)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'date', subBuilder: $1.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text')
-    ..e<Action>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.CREATE, valueOf: Action.valueOf, enumValues: Action.values)
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userName')
+    ..e<ProtoAction>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: ProtoAction.CREATE, valueOf: ProtoAction.valueOf, enumValues: ProtoAction.values)
     ..hasRequiredFields = false
   ;
 
-  Post._() : super();
-  factory Post({
-    $core.int? id,
+  ProtoPost._() : super();
+  factory ProtoPost({
+    $fixnum.Int64? id,
     $fixnum.Int64? userId,
     $1.Timestamp? date,
     $core.String? text,
-    Action? action,
+    $core.String? userName,
+    ProtoAction? action,
   }) {
     final _result = create();
     if (id != null) {
@@ -184,36 +186,39 @@ class Post extends $pb.GeneratedMessage {
     if (text != null) {
       _result.text = text;
     }
+    if (userName != null) {
+      _result.userName = userName;
+    }
     if (action != null) {
       _result.action = action;
     }
     return _result;
   }
-  factory Post.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Post.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ProtoPost.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ProtoPost.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  Post clone() => Post()..mergeFromMessage(this);
+  ProtoPost clone() => ProtoPost()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Post copyWith(void Function(Post) updates) => super.copyWith((message) => updates(message as Post)) as Post; // ignore: deprecated_member_use
+  ProtoPost copyWith(void Function(ProtoPost) updates) => super.copyWith((message) => updates(message as ProtoPost)) as ProtoPost; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static Post create() => Post._();
-  Post createEmptyInstance() => create();
-  static $pb.PbList<Post> createRepeated() => $pb.PbList<Post>();
+  static ProtoPost create() => ProtoPost._();
+  ProtoPost createEmptyInstance() => create();
+  static $pb.PbList<ProtoPost> createRepeated() => $pb.PbList<ProtoPost>();
   @$core.pragma('dart2js:noInline')
-  static Post getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Post>(create);
-  static Post? _defaultInstance;
+  static ProtoPost getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProtoPost>(create);
+  static ProtoPost? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get id => $_getIZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($core.int v) { $_setSignedInt32(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -249,24 +254,33 @@ class Post extends $pb.GeneratedMessage {
   void clearText() => clearField(4);
 
   @$pb.TagNumber(5)
-  Action get action => $_getN(4);
+  $core.String get userName => $_getSZ(4);
   @$pb.TagNumber(5)
-  set action(Action v) { setField(5, v); }
+  set userName($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasAction() => $_has(4);
+  $core.bool hasUserName() => $_has(4);
   @$pb.TagNumber(5)
-  void clearAction() => clearField(5);
+  void clearUserName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  ProtoAction get action => $_getN(5);
+  @$pb.TagNumber(6)
+  set action(ProtoAction v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAction() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAction() => clearField(6);
 }
 
-class CommentId extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CommentId', createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+class ProtoCommentId extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProtoCommentId', createEmptyInstance: create)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
-  CommentId._() : super();
-  factory CommentId({
-    $core.int? id,
+  ProtoCommentId._() : super();
+  factory ProtoCommentId({
+    $fixnum.Int64? id,
   }) {
     final _result = create();
     if (id != null) {
@@ -274,56 +288,58 @@ class CommentId extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory CommentId.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CommentId.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ProtoCommentId.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ProtoCommentId.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  CommentId clone() => CommentId()..mergeFromMessage(this);
+  ProtoCommentId clone() => ProtoCommentId()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CommentId copyWith(void Function(CommentId) updates) => super.copyWith((message) => updates(message as CommentId)) as CommentId; // ignore: deprecated_member_use
+  ProtoCommentId copyWith(void Function(ProtoCommentId) updates) => super.copyWith((message) => updates(message as ProtoCommentId)) as ProtoCommentId; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static CommentId create() => CommentId._();
-  CommentId createEmptyInstance() => create();
-  static $pb.PbList<CommentId> createRepeated() => $pb.PbList<CommentId>();
+  static ProtoCommentId create() => ProtoCommentId._();
+  ProtoCommentId createEmptyInstance() => create();
+  static $pb.PbList<ProtoCommentId> createRepeated() => $pb.PbList<ProtoCommentId>();
   @$core.pragma('dart2js:noInline')
-  static CommentId getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommentId>(create);
-  static CommentId? _defaultInstance;
+  static ProtoCommentId getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProtoCommentId>(create);
+  static ProtoCommentId? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get id => $_getIZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($core.int v) { $_setSignedInt32(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 }
 
-class Comment extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Comment', createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+class ProtoComment extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProtoComment', createEmptyInstance: create)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'date', subBuilder: $1.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text')
-    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'postId', $pb.PbFieldType.O3)
-    ..e<Action>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.CREATE, valueOf: Action.valueOf, enumValues: Action.values)
+    ..aInt64(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'postId')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userName')
+    ..e<ProtoAction>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: ProtoAction.CREATE, valueOf: ProtoAction.valueOf, enumValues: ProtoAction.values)
     ..hasRequiredFields = false
   ;
 
-  Comment._() : super();
-  factory Comment({
-    $core.int? id,
+  ProtoComment._() : super();
+  factory ProtoComment({
+    $fixnum.Int64? id,
     $fixnum.Int64? userId,
     $1.Timestamp? date,
     $core.String? text,
-    $core.int? postId,
-    Action? action,
+    $fixnum.Int64? postId,
+    $core.String? userName,
+    ProtoAction? action,
   }) {
     final _result = create();
     if (id != null) {
@@ -341,36 +357,39 @@ class Comment extends $pb.GeneratedMessage {
     if (postId != null) {
       _result.postId = postId;
     }
+    if (userName != null) {
+      _result.userName = userName;
+    }
     if (action != null) {
       _result.action = action;
     }
     return _result;
   }
-  factory Comment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Comment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ProtoComment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ProtoComment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  Comment clone() => Comment()..mergeFromMessage(this);
+  ProtoComment clone() => ProtoComment()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Comment copyWith(void Function(Comment) updates) => super.copyWith((message) => updates(message as Comment)) as Comment; // ignore: deprecated_member_use
+  ProtoComment copyWith(void Function(ProtoComment) updates) => super.copyWith((message) => updates(message as ProtoComment)) as ProtoComment; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static Comment create() => Comment._();
-  Comment createEmptyInstance() => create();
-  static $pb.PbList<Comment> createRepeated() => $pb.PbList<Comment>();
+  static ProtoComment create() => ProtoComment._();
+  ProtoComment createEmptyInstance() => create();
+  static $pb.PbList<ProtoComment> createRepeated() => $pb.PbList<ProtoComment>();
   @$core.pragma('dart2js:noInline')
-  static Comment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Comment>(create);
-  static Comment? _defaultInstance;
+  static ProtoComment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProtoComment>(create);
+  static ProtoComment? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get id => $_getIZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($core.int v) { $_setSignedInt32(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -406,21 +425,30 @@ class Comment extends $pb.GeneratedMessage {
   void clearText() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.int get postId => $_getIZ(4);
+  $fixnum.Int64 get postId => $_getI64(4);
   @$pb.TagNumber(5)
-  set postId($core.int v) { $_setSignedInt32(4, v); }
+  set postId($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasPostId() => $_has(4);
   @$pb.TagNumber(5)
   void clearPostId() => clearField(5);
 
   @$pb.TagNumber(6)
-  Action get action => $_getN(5);
+  $core.String get userName => $_getSZ(5);
   @$pb.TagNumber(6)
-  set action(Action v) { setField(6, v); }
+  set userName($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasAction() => $_has(5);
+  $core.bool hasUserName() => $_has(5);
   @$pb.TagNumber(6)
-  void clearAction() => clearField(6);
+  void clearUserName() => clearField(6);
+
+  @$pb.TagNumber(7)
+  ProtoAction get action => $_getN(6);
+  @$pb.TagNumber(7)
+  set action(ProtoAction v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAction() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAction() => clearField(7);
 }
 

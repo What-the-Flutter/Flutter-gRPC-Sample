@@ -9,18 +9,18 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class Action extends $pb.ProtobufEnum {
-  static const Action CREATE = Action._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'CREATE');
-  static const Action DELETE = Action._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DELETE');
+class ProtoAction extends $pb.ProtobufEnum {
+  static const ProtoAction CREATE = ProtoAction._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'CREATE');
+  static const ProtoAction DELETE = ProtoAction._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DELETE');
 
-  static const $core.List<Action> values = <Action> [
+  static const $core.List<ProtoAction> values = <ProtoAction> [
     CREATE,
     DELETE,
   ];
 
-  static final $core.Map<$core.int, Action> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static Action? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, ProtoAction> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ProtoAction? valueOf($core.int value) => _byValue[value];
 
-  const Action._($core.int v, $core.String n) : super(v, n);
+  const ProtoAction._($core.int v, $core.String n) : super(v, n);
 }
 

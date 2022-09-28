@@ -8,7 +8,7 @@ class UserInteractor extends BaseInteractor {
 
   UserInteractor(this._userRepository);
 
-  Future<void> createUser(User user) async {
-    user = await _userRepository.create(user);
+  Future<void> createUser(User entity) async {
+    user = await _userRepository.create(entity);
   }
 }

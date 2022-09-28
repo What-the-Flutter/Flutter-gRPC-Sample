@@ -7,48 +7,59 @@ import 'package:protobuf/protobuf.dart';
 
 class PostsService extends PostsServiceBase {
   final DatabaseService _databaseDataSource = DatabaseService();
-  final StreamController<Post> _postsStream = StreamController.broadcast();
-  final StreamController<Comment> _commentsStream = StreamController.broadcast();
+  final StreamController<ProtoPost> _postsStream = StreamController.broadcast();
+  final StreamController<ProtoComment> _commentsStream = StreamController.broadcast();
 
   @override
-  Future<Empty> createComment(ServiceCall call, Comment request) async {
+  Future<Empty> createComment(ServiceCall call, ProtoComment request) async {
     final comment = _databaseDataSource.createComment(request);
-    _commentsStream.sink.add(comment);
+    comment.freeze();
+    var createdComment = comment.rebuild((comment) => comment.action = ProtoAction.CREATE);
+    _commentsStream.sink.add(createdComment);
     return Empty();
   }
 
   @override
-  Future<Empty> deleteComment(ServiceCall call, CommentId request) async {
+  Future<Empty> deleteComment(ServiceCall call, ProtoCommentId request) async {
     var comment = _databaseDataSource.getComment(request.id);
-    var deletedComment = comment.rebuild((comment) => comment.action = Action.DELETE);
+    comment.freeze();
+    var deletedComment = comment.rebuild((comment) => comment.action = ProtoAction.DELETE);
     _commentsStream.sink.add(deletedComment);
     _databaseDataSource.deleteComment(request.id);
     return Empty();
   }
 
   @override
-  Future<Empty> deletePost(ServiceCall call, PostId request) async {
+  Future<Empty> deletePost(ServiceCall call, ProtoPostId request) async {
     var post = _databaseDataSource.getPost(request.id);
-    var deletedPost = post.rebuild((post) => post.action = Action.DELETE);
+    post.freeze();
+    var deletedPost = post.rebuild((post) => post.action = ProtoAction.DELETE);
     _postsStream.sink.add(deletedPost);
+
+    for (var comment in _databaseDataSource.getCommentsByPostId(request.id)) {
+      deleteComment(call, ProtoCommentId(id: comment.id));
+    }
+
     _databaseDataSource.deletePost(request.id);
     return Empty();
   }
 
   @override
-  Future<Empty> createPost(ServiceCall call, Post request) async {
+  Future<Empty> createPost(ServiceCall call, ProtoPost request) async {
     final post = _databaseDataSource.createPost(request);
-    _postsStream.sink.add(post);
+    post.freeze();
+    var createdPost = post.rebuild((post) => post.action = ProtoAction.CREATE);
+    _postsStream.add(createdPost);
     return Empty();
   }
 
   @override
-  Future<User> createUser(ServiceCall call, User request) async {
+  Future<ProtoUser> createUser(ServiceCall call, ProtoUser request) async {
     return _databaseDataSource.createUser(request);
   }
 
   @override
-  Stream<Post> getAllPosts(ServiceCall call, Empty request) async* {
+  Stream<ProtoPost> getAllPosts(ServiceCall call, Empty request) async* {
     for (var post in _databaseDataSource.getAllPosts()) {
       yield post;
     }
@@ -58,7 +69,7 @@ class PostsService extends PostsServiceBase {
   }
 
   @override
-  Stream<Comment> getCommentsByPostId(ServiceCall call, PostId request) async* {
+  Stream<ProtoComment> getCommentsByPostId(ServiceCall call, ProtoPostId request) async* {
     for (var comment in _databaseDataSource.getCommentsByPostId(request.id)) {
       yield comment;
     }

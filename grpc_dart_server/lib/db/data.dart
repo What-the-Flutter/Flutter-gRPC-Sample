@@ -1,7 +1,7 @@
 import 'package:grpc_dart_server/entities/proto/posts.pb.dart';
 
-final users = <User>[];
+final users = <ProtoUser>[];
 
-final posts = <Post>[];
+final posts = <ProtoPost>[];
 
-final comments = <Comment>[];
+final comments = <ProtoComment>[];

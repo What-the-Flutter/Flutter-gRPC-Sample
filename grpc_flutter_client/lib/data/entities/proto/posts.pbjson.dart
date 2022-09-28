@@ -8,17 +8,17 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-@$core.Deprecated('Use actionDescriptor instead')
-const Action$json = const {
-  '1': 'Action',
+@$core.Deprecated('Use protoActionDescriptor instead')
+const ProtoAction$json = const {
+  '1': 'ProtoAction',
   '2': const [
     const {'1': 'CREATE', '2': 0},
     const {'1': 'DELETE', '2': 1},
   ],
 };
 
-/// Descriptor for `Action`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List actionDescriptor = $convert.base64Decode('CgZBY3Rpb24SCgoGQ1JFQVRFEAASCgoGREVMRVRFEAE=');
+/// Descriptor for `ProtoAction`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List protoActionDescriptor = $convert.base64Decode('CgtQcm90b0FjdGlvbhIKCgZDUkVBVEUQABIKCgZERUxFVEUQAQ==');
 @$core.Deprecated('Use emptyDescriptor instead')
 const Empty$json = const {
   '1': 'Empty',
@@ -26,63 +26,65 @@ const Empty$json = const {
 
 /// Descriptor for `Empty`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List emptyDescriptor = $convert.base64Decode('CgVFbXB0eQ==');
-@$core.Deprecated('Use userDescriptor instead')
-const User$json = const {
-  '1': 'User',
+@$core.Deprecated('Use protoUserDescriptor instead')
+const ProtoUser$json = const {
+  '1': 'ProtoUser',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
     const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
   ],
 };
 
-/// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgDUgJpZBISCgRuYW1lGAIgASgJUgRuYW1l');
-@$core.Deprecated('Use postIdDescriptor instead')
-const PostId$json = const {
-  '1': 'PostId',
+/// Descriptor for `ProtoUser`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List protoUserDescriptor = $convert.base64Decode('CglQcm90b1VzZXISDgoCaWQYASABKANSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWU=');
+@$core.Deprecated('Use protoPostIdDescriptor instead')
+const ProtoPostId$json = const {
+  '1': 'ProtoPostId',
   '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 5, '10': 'id'},
+    const {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
   ],
 };
 
-/// Descriptor for `PostId`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List postIdDescriptor = $convert.base64Decode('CgZQb3N0SWQSDgoCaWQYASABKAVSAmlk');
-@$core.Deprecated('Use postDescriptor instead')
-const Post$json = const {
-  '1': 'Post',
+/// Descriptor for `ProtoPostId`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List protoPostIdDescriptor = $convert.base64Decode('CgtQcm90b1Bvc3RJZBIOCgJpZBgBIAEoA1ICaWQ=');
+@$core.Deprecated('Use protoPostDescriptor instead')
+const ProtoPost$json = const {
+  '1': 'ProtoPost',
   '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 5, '10': 'id'},
+    const {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
     const {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
     const {'1': 'date', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'date'},
     const {'1': 'text', '3': 4, '4': 1, '5': 9, '10': 'text'},
-    const {'1': 'action', '3': 5, '4': 1, '5': 14, '6': '.Action', '10': 'action'},
+    const {'1': 'user_name', '3': 5, '4': 1, '5': 9, '10': 'userName'},
+    const {'1': 'action', '3': 6, '4': 1, '5': 14, '6': '.ProtoAction', '10': 'action'},
   ],
 };
 
-/// Descriptor for `Post`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List postDescriptor = $convert.base64Decode('CgRQb3N0Eg4KAmlkGAEgASgFUgJpZBIXCgd1c2VyX2lkGAIgASgDUgZ1c2VySWQSLgoEZGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBGRhdGUSEgoEdGV4dBgEIAEoCVIEdGV4dBIfCgZhY3Rpb24YBSABKA4yBy5BY3Rpb25SBmFjdGlvbg==');
-@$core.Deprecated('Use commentIdDescriptor instead')
-const CommentId$json = const {
-  '1': 'CommentId',
+/// Descriptor for `ProtoPost`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List protoPostDescriptor = $convert.base64Decode('CglQcm90b1Bvc3QSDgoCaWQYASABKANSAmlkEhcKB3VzZXJfaWQYAiABKANSBnVzZXJJZBIuCgRkYXRlGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIEZGF0ZRISCgR0ZXh0GAQgASgJUgR0ZXh0EhsKCXVzZXJfbmFtZRgFIAEoCVIIdXNlck5hbWUSJAoGYWN0aW9uGAYgASgOMgwuUHJvdG9BY3Rpb25SBmFjdGlvbg==');
+@$core.Deprecated('Use protoCommentIdDescriptor instead')
+const ProtoCommentId$json = const {
+  '1': 'ProtoCommentId',
   '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 5, '10': 'id'},
+    const {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
   ],
 };
 
-/// Descriptor for `CommentId`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List commentIdDescriptor = $convert.base64Decode('CglDb21tZW50SWQSDgoCaWQYASABKAVSAmlk');
-@$core.Deprecated('Use commentDescriptor instead')
-const Comment$json = const {
-  '1': 'Comment',
+/// Descriptor for `ProtoCommentId`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List protoCommentIdDescriptor = $convert.base64Decode('Cg5Qcm90b0NvbW1lbnRJZBIOCgJpZBgBIAEoA1ICaWQ=');
+@$core.Deprecated('Use protoCommentDescriptor instead')
+const ProtoComment$json = const {
+  '1': 'ProtoComment',
   '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 5, '10': 'id'},
+    const {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
     const {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
     const {'1': 'date', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'date'},
     const {'1': 'text', '3': 4, '4': 1, '5': 9, '10': 'text'},
-    const {'1': 'post_id', '3': 5, '4': 1, '5': 5, '10': 'postId'},
-    const {'1': 'action', '3': 6, '4': 1, '5': 14, '6': '.Action', '10': 'action'},
+    const {'1': 'post_id', '3': 5, '4': 1, '5': 3, '10': 'postId'},
+    const {'1': 'user_name', '3': 6, '4': 1, '5': 9, '10': 'userName'},
+    const {'1': 'action', '3': 7, '4': 1, '5': 14, '6': '.ProtoAction', '10': 'action'},
   ],
 };
 
-/// Descriptor for `Comment`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List commentDescriptor = $convert.base64Decode('CgdDb21tZW50Eg4KAmlkGAEgASgFUgJpZBIXCgd1c2VyX2lkGAIgASgDUgZ1c2VySWQSLgoEZGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBGRhdGUSEgoEdGV4dBgEIAEoCVIEdGV4dBIXCgdwb3N0X2lkGAUgASgFUgZwb3N0SWQSHwoGYWN0aW9uGAYgASgOMgcuQWN0aW9uUgZhY3Rpb24=');
+/// Descriptor for `ProtoComment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List protoCommentDescriptor = $convert.base64Decode('CgxQcm90b0NvbW1lbnQSDgoCaWQYASABKANSAmlkEhcKB3VzZXJfaWQYAiABKANSBnVzZXJJZBIuCgRkYXRlGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIEZGF0ZRISCgR0ZXh0GAQgASgJUgR0ZXh0EhcKB3Bvc3RfaWQYBSABKANSBnBvc3RJZBIbCgl1c2VyX25hbWUYBiABKAlSCHVzZXJOYW1lEiQKBmFjdGlvbhgHIAEoDjIMLlByb3RvQWN0aW9uUgZhY3Rpb24=');
