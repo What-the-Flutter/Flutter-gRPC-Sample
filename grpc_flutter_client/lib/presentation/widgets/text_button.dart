@@ -4,12 +4,14 @@ class GrpcTextButton extends StatelessWidget {
   final bool isButtonActive;
   final VoidCallback onClick;
   final String buttonText;
+  final double textSize;
 
   const GrpcTextButton({
     Key? key,
     required this.isButtonActive,
     required this.onClick,
     required this.buttonText,
+    this.textSize = 20,
   }) : super(key: key);
 
   @override
@@ -29,7 +31,7 @@ class GrpcTextButton extends StatelessWidget {
         },
         child: Text(
           buttonText,
-          style: const TextStyle(fontSize: 20.0, color: Colors.white),
+          style: TextStyle(fontSize: textSize, color: Colors.white),
         ),
       ),
     );

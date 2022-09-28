@@ -21,7 +21,7 @@ class PostCreatingController extends GetxController {
     super.onInit();
   }
 
-  void goBack() => Get.back();
+  void goToPrevPage() => Get.back();
 
   void addPost(String text) async {
     final post = Post.withoutId(
@@ -32,7 +32,7 @@ class PostCreatingController extends GetxController {
       date: DateTime.now(),
     );
     await _postInteractor.createPost(post);
-    goBack();
+    goToPrevPage();
   }
 
   void setButtonActive(String text) => isButtonActive.value = text.isNotEmpty;
