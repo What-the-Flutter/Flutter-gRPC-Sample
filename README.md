@@ -30,7 +30,7 @@ cd grpc_flutter_client && flutter run
 ```
 #### Running on a Device
 
-To run on a real device, you must use [ngrok](https://ngrok.com). Ngrok is a globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine (enough a free ngrok account).
+In order to run on a real device, you must use [ngrok](https://ngrok.com). Ngrok is a globally distributed reverse proxy fronting your web services running in any cloud or private network, or your machine (enough a free ngrok account).
 
 ```
 ngrok tcp 50001
