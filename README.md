@@ -21,7 +21,8 @@ Open terminal and use
 ```
 ipconfig
 ```
-After running this command, you'll need to copy the IPv4 address to [grpc_flutter_client/lib/data/utils/constants/connectivity_constants.dart](./grpc_flutter_client/lib/data/utils/constants/connectivity_constants.dart). Port unchanged.  
+After running this command, you'll need to copy the IPv4 address to [grpc_flutter_client/lib/data/utils/constants/connectivity_constants.dart](./grpc_flutter_client/lib/data/utils/constants/connectivity_constants.dart). 
+Don`t change port.  
 
 To start the client:
 
