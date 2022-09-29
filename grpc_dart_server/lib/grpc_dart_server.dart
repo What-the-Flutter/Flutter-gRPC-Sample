@@ -37,7 +37,7 @@ class PostsService extends PostsServiceBase {
     _postsStream.sink.add(deletedPost);
 
     for (var comment in _databaseDataSource.getCommentsByPostId(request.id)) {
-      deleteComment(call, ProtoCommentId(id: comment.id));
+      await deleteComment(call, ProtoCommentId(id: comment.id));
     }
 
     _databaseDataSource.deletePost(request.id);
