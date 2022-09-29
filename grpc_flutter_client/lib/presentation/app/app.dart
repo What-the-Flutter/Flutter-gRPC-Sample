@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grpc_flutter_client/di/app_binding.dart';
+import 'package:grpc_flutter_client/presentation/app/app_controller.dart';
 import 'package:grpc_flutter_client/presentation/auth/auth_binding.dart';
 import 'package:grpc_flutter_client/presentation/auth/auth_page.dart';
 import 'package:grpc_flutter_client/presentation/home/home_binding.dart';
@@ -12,7 +13,7 @@ import 'package:grpc_flutter_client/presentation/post_detailed/post_detailed_pag
 
 import 'navigation/routes.dart';
 
-class App extends StatelessWidget {
+class App extends GetView<AppController> {
   const App({Key? key}) : super(key: key);
 
   @override

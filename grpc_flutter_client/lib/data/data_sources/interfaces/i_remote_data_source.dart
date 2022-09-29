@@ -16,4 +16,6 @@ abstract class IRemoteDataSource {
   Stream<Comment> getCommentsByPostId(int postId);
 
   Future<void> deleteComment(int commentId);
+
+  void dispose();
 }
