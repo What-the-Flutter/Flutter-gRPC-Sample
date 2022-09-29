@@ -4,7 +4,7 @@ import 'package:grpc_flutter_client/data/utils/constants/connectivity_constants.
 
 class RemoteDataProvider {
   PostsServiceClient? _grpcClient;
-  late final ClientChannel? _channel;
+  late final ClientChannel _channel;
 
   PostsServiceClient get grpcClient {
     if (_grpcClient != null) return _grpcClient!;
@@ -19,12 +19,10 @@ class RemoteDataProvider {
       port: port,
       options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
     );
-    _grpcClient = PostsServiceClient(_channel!);
+    _grpcClient = PostsServiceClient(_channel);
   }
 
   void dispose() async {
-    if (_channel != null) {
-      await _channel!.shutdown();
-    }
+    await _channel.shutdown();
   }
 }

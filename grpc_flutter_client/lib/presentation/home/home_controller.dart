@@ -13,7 +13,7 @@ class HomeController extends GetxController {
   final PostInteractor _postInteractor;
   final UserInteractor _userInteractor;
 
-  late StreamSubscription _postStreamSubscription;
+  late final StreamSubscription _postStreamSubscription;
 
   HomeController(this._postInteractor, this._userInteractor);
 
@@ -26,7 +26,7 @@ class HomeController extends GetxController {
 
   void onPostData(Post newPost) {
     if (newPost.action == Action.add) {
-      posts.add(newPost);
+      posts.insert(0, newPost);
     } else if (newPost.action == Action.delete) {
       posts.removeWhere((post) => post.id == newPost.id);
     }
@@ -41,7 +41,7 @@ class HomeController extends GetxController {
     Get.toNamed(Routes.addPost);
   }
 
-  String truncate(String text, {length = 14, omission = '...'}) {
+  String truncate(String text, {length = 100, omission = '...'}) {
     if (length >= text.length) {
       return text;
     }
