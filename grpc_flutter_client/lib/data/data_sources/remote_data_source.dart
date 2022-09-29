@@ -66,4 +66,9 @@ class RemoteDataSource extends IRemoteDataSource {
       yield _commentMapper.fromProto(comment);
     }
   }
+
+  @override
+  void dispose() {
+    _remoteDataProvider.dispose();
+  }
 }
