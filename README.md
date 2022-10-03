@@ -2,6 +2,14 @@
 
 Demonstration of the gRPC protocol with a Dart server and a Flutter client.
 
+## Why gRPC?
+
+[gRPC](https://grpc.io) is a cross-platform open source high performance Remote Procedure Call (RPC) framework which sends structured binary data over [HTTP/2](https://developers.google.com/web/fundamentals/performance/http2/) instead of plaintext JSON, uses [Protocol Buffers](https://developers.google.com/protocol-buffers) for model development and provides features such as authentication, bidirectional streaming and flow control, blocking or nonblocking bindings, and cancellation and timeouts. 
+
+## Code generation
+
+Protocol buffers allows us to define our data structures, then use the protocol buffer compiler to generate source code from these data structures. To generate the gRPC client and server interfaces from our .proto service definition run [generate.sh](generate.sh)
+
 ## Running the Demo
 ### Start Server
 
