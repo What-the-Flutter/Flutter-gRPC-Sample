@@ -10,17 +10,19 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class ProtoAction extends $pb.ProtobufEnum {
-  static const ProtoAction CREATE = ProtoAction._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'CREATE');
-  static const ProtoAction DELETE = ProtoAction._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DELETE');
+  static const ProtoAction CREATE = ProtoAction._(
+      0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'CREATE');
+  static const ProtoAction DELETE = ProtoAction._(
+      1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DELETE');
 
-  static const $core.List<ProtoAction> values = <ProtoAction> [
+  static const $core.List<ProtoAction> values = <ProtoAction>[
     CREATE,
     DELETE,
   ];
 
   static final $core.Map<$core.int, ProtoAction> _byValue = $pb.ProtobufEnum.initByValue(values);
+
   static ProtoAction? valueOf($core.int value) => _byValue[value];
 
   const ProtoAction._($core.int v, $core.String n) : super(v, n);
 }
-
