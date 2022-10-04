@@ -8,7 +8,7 @@ Demonstration of the gRPC protocol with a Dart server and a Flutter client.
 
 ## Code generation
 
-Protocol buffers allows us to define our data structures, then use the protocol buffer compiler to generate source code from these data structures. To generate the gRPC client and server interfaces from our .proto service definition run [generate.sh](generate.sh)
+Protocol Buffers allows us to define our data structures. After their definition we should use protobuf compiler to generate source code from these data structures. In order to generate the gRPC client and server interfaces from our .proto service definition run [generate.sh](generate.sh)
 
 ## Running the Demo
 ### Start Server
