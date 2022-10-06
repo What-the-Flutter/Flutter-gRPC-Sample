@@ -1,4 +1,4 @@
-import 'package:grpc_flutter_client/data/entities/proto/posts.pb.dart';
+import 'package:grpc_flutter_client/data/entities/proto/general.pb.dart';
 import 'package:grpc_flutter_client/domain/entities/action.dart';
 
 extension ActionMapper on ProtoAction {

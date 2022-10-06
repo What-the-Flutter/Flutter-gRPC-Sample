@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message Empty {}
+
+enum ProtoAction {
+  CREATE = 0;
+  DELETE = 1;
+}
