@@ -1,6 +1,6 @@
 import 'package:fixnum/fixnum.dart';
+import 'package:grpc_flutter_client/data/entities/proto/user.pb.dart';
 import 'package:grpc_flutter_client/domain/entities/user/user.dart';
-import 'package:grpc_flutter_client/data/entities/proto/posts.pbgrpc.dart';
 
 class UserMapper {
   User fromProto(ProtoUser proto) {

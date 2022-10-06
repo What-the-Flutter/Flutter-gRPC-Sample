@@ -1,6 +1,6 @@
 import 'package:fixnum/fixnum.dart';
 import 'package:grpc_flutter_client/data/entities/proto/google/protobuf/timestamp.pb.dart';
-import 'package:grpc_flutter_client/data/entities/proto/posts.pb.dart';
+import 'package:grpc_flutter_client/data/entities/proto/post.pb.dart';
 import 'package:grpc_flutter_client/data/mappers/action_mapper.dart';
 import 'package:grpc_flutter_client/domain/entities/post/post.dart';
 

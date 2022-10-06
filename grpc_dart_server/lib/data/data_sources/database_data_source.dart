@@ -1,8 +1,10 @@
 import 'package:fixnum/fixnum.dart';
-import 'package:grpc_dart_server/db/data.dart';
-import 'package:grpc_dart_server/entities/proto/posts.pb.dart';
+import 'package:grpc_dart_server/data/db/data.dart';
+import 'package:grpc_dart_server/entities/proto/comment.pb.dart';
+import 'package:grpc_dart_server/entities/proto/post.pb.dart';
+import 'package:grpc_dart_server/entities/proto/user.pb.dart';
 
-class DatabaseService {
+class DatabaseDataSource {
   ProtoComment createComment(ProtoComment comment) {
     comment.id = comment.date.seconds;
     comments.add(comment);

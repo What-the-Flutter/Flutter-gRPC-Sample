@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "general.proto";
+import "post.proto";
+
+service CommentService {
+  rpc CreateComment(ProtoComment) returns (Empty);
+  rpc GetCommentsByPostId(ProtoPostId) returns (stream ProtoComment);
+  rpc DeleteComment (ProtoCommentId) returns (Empty);
+}
+
+message ProtoCommentId {
+  int64 id = 1;
+}
+
+message ProtoComment {
+  int64 id = 1;
+  int64 user_id = 2;
+  google.protobuf.Timestamp date = 3;
+  string text = 4;
+  int64 post_id = 5;
+  string user_name = 6;
+  ProtoAction action = 7;
+}

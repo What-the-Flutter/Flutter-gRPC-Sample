@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "general.proto";
+
+service PostService {
+  rpc CreatePost(ProtoPost) returns (Empty);
+  rpc GetAllPosts(Empty) returns (stream ProtoPost);
+  rpc DeletePost (ProtoPostId) returns (Empty);
+}
+
+message ProtoPostId {
+  int64 id = 1;
+}
+
+message ProtoPost {
+  int64 id = 1;
+  int64 user_id = 2;
+  google.protobuf.Timestamp date = 3;
+  string text = 4;
+  string user_name = 5;
+  ProtoAction action = 6;
+}
